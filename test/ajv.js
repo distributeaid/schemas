@@ -8,7 +8,7 @@ module.exports = {
 	ajv: addFormats(
 		new Ajv({
 			schemas: glob
-				.sync(`${path.resolve(process.cwd(), 'schemas')}/*.schema.json`)
+				.sync(`${path.resolve(process.cwd(), 'schemas')}/*.json`)
 				.map((f) => JSON.parse(fs.readFileSync(f, 'utf-8'))),
 		}),
 	),

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$id": "https://distributeaid.github.io/schemas#Person",
+  "$id": "https://distributeaid.github.io/schemas/Person",
   "description": "A natural person",
   "type": "object",
   "properties": {

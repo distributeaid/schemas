@@ -3,7 +3,7 @@ const path = require('path')
 const { ajv } = require('./ajv.js')
 
 describe('Aid Group', () => {
-	test('aid-group.schema.json', () => {
+	test('AidGroups.json', () => {
 		const data = JSON.parse(
 			fs.readFileSync(
 				path.resolve(process.cwd(), 'test', 'samples', 'aid-group.json'),
@@ -11,7 +11,7 @@ describe('Aid Group', () => {
 			),
 		)
 		const validate = ajv.getSchema(
-			'https://distributeaid.github.io/schemas#AidGroup',
+			'https://distributeaid.github.io/schemas/AidGroup',
 		)
 		const valid = validate(data)
 		expect(validate.errors).toBeNull()

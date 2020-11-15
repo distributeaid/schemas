@@ -1,16 +1,16 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "$id": "https://distributeaid.github.io/schemas#QuoteRequest",
+  "$id": "https://distributeaid.github.io/schemas/QuoteRequest",
   "description": "A quote request",
   "type": "object",
   "properties": {
     "pointOfContact": {
       "description": "The main point of contact for this shipment",
-      "$ref": "https://distributeaid.github.io/schemas#Person"
+      "$ref": "https://distributeaid.github.io/schemas/Person"
     },
     "aidGroup": {
       "description": "The affiliated Aid Group",
-      "$ref": "https://distributeaid.github.io/schemas#AidGroup"
+      "$ref": "https://distributeaid.github.io/schemas/AidGroup"
     },
     "categories": {
       "description": "What categories of aid do you want to send?",

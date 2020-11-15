@@ -3,7 +3,7 @@ const path = require('path')
 const { ajv } = require('./ajv.js')
 
 describe('Person', () => {
-	test('person.schema.json', () => {
+	test('Person.json', () => {
 		const data = JSON.parse(
 			fs.readFileSync(
 				path.resolve(process.cwd(), 'test', 'samples', 'person.json'),
@@ -11,7 +11,7 @@ describe('Person', () => {
 			),
 		)
 		const validate = ajv.getSchema(
-			'https://distributeaid.github.io/schemas#Person',
+			'https://distributeaid.github.io/schemas/Person',
 		)
 		const valid = validate(data)
 		expect(validate.errors).toBeNull()
