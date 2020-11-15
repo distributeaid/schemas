@@ -1,0 +1,21 @@
+{
+  "pointOfContact": {
+    "name": "Alex Doe",
+    "email": "alex@example.com",
+    "phone": "+12345667790",
+    "country": "SWE"
+  },
+  "aidGroup": {
+    "name": "Distribute Aid",
+    "url": "https://distributeaid.org/"
+  },
+  "categories": [
+    "Winter clothing (inluding shoes)",
+    "Shelter (ex: tents, blankets)"
+  ],
+  "packaging": "Euro Pallets (80cm x 120cm x 200cm high)",
+  "cargoReady": "2020-12-01T00:00:00Z",
+  "loadingWindow": ["2 weeks", "3 weeks", "4 weeks"],
+  "impact": "Does anyone fill out this anyway?",
+  "dangerousGoods": false
+}

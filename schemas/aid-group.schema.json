@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://distributeaid.github.io/schemas#AidGroup",
+  "description": "An aid organization",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "pattern": "^http?s://.+" }
+  },
+  "required": ["name", "url"],
+  "additionalProperties": false
+}
