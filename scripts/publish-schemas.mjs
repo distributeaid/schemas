@@ -28,6 +28,29 @@ const main = async () => {
   await fs.mkdir(path.resolve(process.cwd(), "gh-pages", "schemas"), {
     recursive: true,
   });
+  // Index
+  await writeFile(
+    path.resolve(process.cwd(), "gh-pages", "schemas", "index.html"),
+    `<!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <title>Distribute Aid Domain Schemas</title>
+          </head>
+          <body>
+          <ul>
+          ${schemas
+            .map(
+              (schema) => `<li><a href="${schema.$id}">
+              <code>${schema.$id.replace(siteUrl, "")}</code>
+            </a>: ${schema.description}</li>`
+            )
+            .join("")}
+            </ul>
+          </body>
+        </html>`
+  );
+  // Individual schemas
   await Promise.all(
     schemas.map(async (schema) => {
       const name = schema.$id.replace(siteUrl, "");
@@ -42,8 +65,7 @@ const main = async () => {
             <title>${schema.$id}</title>
           </head>
           <body>
-            <a href="
-            <meta http-equiv="refresh" content="0; URL=${siteUrl}${name}/schema.json">click here</a> if you are not automatically redirected.
+            <a href="${siteUrl}${name}/schema.json">click here</a> if you are not automatically redirected.
           </body>
         </html>`
       );
