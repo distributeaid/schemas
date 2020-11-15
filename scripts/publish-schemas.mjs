@@ -25,12 +25,12 @@ const main = async () => {
       )
     )
   );
-  await fs.mkdir(path.resolve(process.cwd(), "gh-pages", "schemas"), {
+  await fs.mkdir(path.resolve(process.cwd(), "gh-pages"), {
     recursive: true,
   });
   // Index
   await writeFile(
-    path.resolve(process.cwd(), "gh-pages", "schemas", "index.html"),
+    path.resolve(process.cwd(), "gh-pages", "index.html"),
     `<!DOCTYPE html>
         <html lang="en">
           <head>
@@ -54,9 +54,9 @@ const main = async () => {
   await Promise.all(
     schemas.map(async (schema) => {
       const name = schema.$id.replace(siteUrl, "");
-      await fs.mkdir(path.resolve(process.cwd(), "gh-pages", "schemas", name));
+      await fs.mkdir(path.resolve(process.cwd(), "gh-pages", name));
       writeFile(
-        path.resolve(process.cwd(), "gh-pages", "schemas", name, "index.html"),
+        path.resolve(process.cwd(), "gh-pages", name, "index.html"),
         `<!DOCTYPE html>
         <html lang="en">
           <head>
@@ -70,7 +70,7 @@ const main = async () => {
         </html>`
       );
       writeFile(
-        path.resolve(process.cwd(), "gh-pages", "schemas", name, `schema.json`),
+        path.resolve(process.cwd(), "gh-pages", name, `schema.json`),
         JSON.stringify(schema, null, 2)
       );
     })
