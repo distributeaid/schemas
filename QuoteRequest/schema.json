@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$id": "https://distributeaid.github.io/schemas/QuoteRequest",
+  "description": "A quote request",
+  "type": "object",
+  "properties": {
+    "pointOfContact": {
+      "description": "The main point of contact for this shipment",
+      "$ref": "https://distributeaid.github.io/schemas/Person"
+    },
+    "aidGroup": {
+      "description": "The affiliated Aid Group",
+      "$ref": "https://distributeaid.github.io/schemas/AidGroup"
+    },
+    "categories": {
+      "description": "What categories of aid do you want to send?",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "packaging": {
+      "description": "How is the aid packaged?",
+      "type": "string",
+      "minLength": 1
+    },
+    "cargoReady": {
+      "description": "When will the pallets be built, staged, and ready for a pickup?",
+      "type": "string",
+      "format": "date-time"
+    },
+    "loadingWindow": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "1 week",
+          "2 weeks",
+          "3 weeks",
+          "4 weeks"
+        ]
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "impact": {
+      "description": "The impact this aid shipment will have.",
+      "type": "string",
+      "minLength": 1
+    },
+    "dangerousGoods": {
+      "description": "If dangerous goods are contained in the shipment",
+      "type": "boolean"
+    },
+    "dangerousGoodsDescription": {
+      "description": "What kind of (if any) dangerous goods are contained in the shipment",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "minItems": 0
+    }
+  },
+  "required": [
+    "pointOfContact",
+    "aidGroup",
+    "categories",
+    "packaging",
+    "cargoReady",
+    "loadingWindow",
+    "dangerousGoods"
+  ],
+  "additionalProperties": false
+}
