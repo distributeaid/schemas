@@ -35,7 +35,7 @@
     "@commitlint/cli": "12.1.1",
     "@commitlint/config-angular": "12.1.1",
     "@semantic-release/commit-analyzer": "8.0.1",
-    "ajv": "8.0.3",
+    "ajv": "8.0.4",
     "ajv-formats": "2.0.2",
     "chalk": "4.1.0",
     "check-node-version": "4.1.0",
