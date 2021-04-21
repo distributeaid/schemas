@@ -37,7 +37,7 @@
     "@semantic-release/commit-analyzer": "8.0.1",
     "ajv": "8.1.0",
     "ajv-formats": "2.0.2",
-    "chalk": "4.1.0",
+    "chalk": "4.1.1",
     "check-node-version": "4.1.0",
     "glob": "7.1.6",
     "husky": "6.0.0",
